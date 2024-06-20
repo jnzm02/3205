@@ -43,7 +43,7 @@ const searchUser = async () => {
   noResultsMessage.value = 'No Results were Found!';
   errorMessage.value = '';
   isLoading.value = true;
-  const response = await fetch(`http://localhost:3000/find-users?email=${email.value}&number=${phone.value}`);
+  const response = await fetch(`http://localhost:3000/find-users?email=${email.value}&number=${normalizedPhone}`);
   isLoading.value = false;
   const data = await response.json();
   console.log(data);
